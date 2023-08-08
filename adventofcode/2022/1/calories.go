@@ -9,23 +9,33 @@ import (
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
+	input := []string{}
+	var res int
+	for  scanner.Scan() {
+		item := scanner.Text()
+		input = append(input, item)
+	}
+
+	res = calories(input)
+
+	fmt.Println(res)
+}
+
+func calories(input []string) int {
 	var max = 0
 	var sum = 0
-	for  scanner.Scan() {
-		item, _ := strconv.Atoi(scanner.Text())
-		if(item == 0) {
+
+	for _, item := range input {
+		cal, err := strconv.Atoi(item)
+		if(err != nil) {
 			sum = 0
 		} else {
-			sum += item
+			sum += cal
 			if(max < sum) {
 				max = sum
 			}
 		}
-
 	}
-	fmt.Println(max)
-}
 
-func calories() int {
-	return 0
+	return max
 }
