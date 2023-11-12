@@ -21,7 +21,7 @@ func TestExample1(t *testing.T) {
 	input := []string{
 		"A Y",
 	}
-	expect := 8
+	expect := 4
 
 	PerformTest(t, input, expect)
 }
@@ -39,7 +39,7 @@ func TestExample3(t *testing.T) {
 	input := []string{
 		"C Z",
 	}
-	expect := 6
+	expect := 7
 
 	PerformTest(t, input, expect)
 }
@@ -50,7 +50,7 @@ func TestExample(t *testing.T) {
 		"B X",
 		"C Z",
 	}
-	expect := 15
+	expect := 12
 
 	PerformTest(t, input, expect)
 }

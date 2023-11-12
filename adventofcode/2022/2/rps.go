@@ -29,26 +29,35 @@ func rps(input []string) int {
 	return res
 }
 
-func matchScore(match string) int {
+func myScore(match string) int {
 	switch match {
-	case "A Z", "B X", "C Y":
-		return 0
-	case "A X", "B Y", "C Z":
+	case
+		"A Y", // draw to rock: rock
+		"B X", // loose to paper: rock
+		"C Z": // win to scisor: rock
+		return 1
+	case
+		"A Z", // win to rock: paper
+		"B Y", // draw to paper: paper
+		"C X": // loose to scisor: paper
+		return 2
+	case
+		"A X", // loose to rock: scisor
+		"B Z", // win to paper: scisor
+		"C Y": // draw to scisor: scisor
 		return 3
-	case "A Y", "B Z", "C X":
-		return 6
 	}
 	return 0
 }
 
-func myScore(match string) int {
+func matchScore(match string) int {
 	switch match[2] {
 	case 'X':
-		return 1
+		return 0
 	case 'Y':
-		return 2
-	case 'Z':
 		return 3
+	case 'Z':
+		return 6
 	}
 	return 0
 }
