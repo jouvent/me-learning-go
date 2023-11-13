@@ -76,7 +76,7 @@ func TestExample(t *testing.T) {
 		"ttgJtRGJQctTZtZT",
 		"CrZsJsPPZsGzwwsLwLmpwMDw",
 	}
-	expect := 157
+	expect := 70
 
 	PerformTestSack(t, input, expect)
 }

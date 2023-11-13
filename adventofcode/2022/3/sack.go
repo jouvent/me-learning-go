@@ -21,27 +21,37 @@ func main() {
 
 func sack(input []string) int {
 	res := 0
-	for _, sack := range input {
-		item := inspectSack(sack)
+	for i := 0; i < len(input); i += 3 {
+		item := findCommon(input[i], input[i+1], input[i+2])
 		res += priority(item)
 	}
 	return res
 }
 
-func inspectSack(inventory string) byte {
-	right := map[byte]bool{}
-	left := map[byte]bool{}
-	half := len(inventory) / 2
-	for i := 0; i < half; i++ {
-		left[inventory[i]] = true
-		right[inventory[i+half]] = true
-	}
-	for k, _ := range left {
-		if right[k] {
-			return k
+func findCommon(first string, others ...string) byte {
+	for _, v := range first {
+		found := 0
+		for j, other := range others {
+			for _, z := range other {
+				if v == z {
+					found++
+					break
+				}
+			}
+			if found <= j {
+				break
+			}
+		}
+		if found == len(others) {
+			return byte(v)
 		}
 	}
 	return '*'
+}
+
+func inspectSack(inventory string) byte {
+	half := len(inventory) / 2
+	return findCommon(inventory[:half], inventory[half:])
 }
 
 func priority(item byte) int {
