@@ -11,7 +11,7 @@ func PerformTestInspectSack(t *testing.T, input string, expect byte) {
 }
 
 func PerformTestSack(t *testing.T, input []string, expect int) {
-	res := sack(input)
+	res := part2(input)
 
 	if res != expect {
 		t.Errorf("from %v, got %d, wanted %d", input, res, expect)

@@ -13,14 +13,23 @@ func Process(input string, part int) {
 func process(input string, part int) (res int) {
 	items := file.ReadLines(input)
 	if part == 1 {
-		res = sack(items)
+		res = part1(items)
 	} else {
-		res = sack(items)
+		res = part2(items)
 	}
 	return
 }
 
-func sack(input []string) int {
+func part1(input []string) int {
+	res := 0
+	for i := 0; i < len(input); i ++ {
+		item := inspectSack(input[i])
+		res += priority(item)
+	}
+	return res
+}
+
+func part2(input []string) int {
 	res := 0
 	for i := 0; i < len(input); i += 3 {
 		item := findCommon(input[i], input[i+1], input[i+2])
