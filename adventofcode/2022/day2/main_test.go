@@ -11,7 +11,7 @@ func ProcessTest(t *testing.T, input string, part int, expect int) {
 }
 
 func PerformTest(t *testing.T, input []string, expect int) {
-	res := rps(input)
+	res := rps2(input)
 
 	if res != expect {
 		t.Errorf("from %v, got %d, wanted %d", input, res, expect)

@@ -1,22 +1,23 @@
 package day3
 
 import (
-	"bufio"
 	"fmt"
-	"os"
+
+	"aoc2022/file"
 )
 
-func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	input := []string{}
-	var res int
-	for scanner.Scan() {
-		input = append(input, scanner.Text())
+func Process(input string, part int) {
+	fmt.Println(process(input, part))
+}
+
+func process(input string, part int) (res int) {
+	items := file.ReadLines(input)
+	if part == 1 {
+		res = sack(items)
+	} else {
+		res = sack(items)
 	}
-
-	res = sack(input)
-
-	fmt.Println(res)
+	return
 }
 
 func sack(input []string) int {
