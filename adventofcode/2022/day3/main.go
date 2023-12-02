@@ -22,7 +22,7 @@ func process(input string, part int) (res int) {
 
 func part1(input []string) int {
 	res := 0
-	for i := 0; i < len(input); i ++ {
+	for i := 0; i < len(input); i++ {
 		item := inspectSack(input[i])
 		res += priority(item)
 	}

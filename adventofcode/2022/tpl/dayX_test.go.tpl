@@ -1,4 +1,4 @@
-package day0
+package dayX
 
 import "testing"
 
@@ -10,8 +10,16 @@ func ProcessTest(t *testing.T, input string, part, expect int) {
 	}
 }
 
-func PerformTest(t *testing.T, input []string, top, expect int) {
-	res := calories(input, top)
+func Part1Test(t *testing.T, input []string, top, expect int) {
+	res := part1(input, top)
+
+	if res != expect {
+		t.Errorf("from %v, got %d, wanted %d", input, res, expect)
+	}
+}
+
+func Part2Test(t *testing.T, input []string, top, expect int) {
+	res := part2(input, top)
 
 	if res != expect {
 		t.Errorf("from %v, got %d, wanted %d", input, res, expect)
@@ -47,15 +55,15 @@ func TestTop3(t *testing.T) {
 }
 
 func TestOfficialInputs1(t *testing.T) {
-	input := "../input_day0.txt"
-	expect := 69289
+	input := "../input_dayX.txt"
+	expect := 0
 
 	ProcessTest(t, input, 1, expect)
 }
 
 func TestOfficialInputs2(t *testing.T) {
-	input := "../input_day1.txt"
-	expect := 205615
+	input := "../input_dayX.txt"
+	expect := 0
 
 	ProcessTest(t, input, 2, expect)
 }

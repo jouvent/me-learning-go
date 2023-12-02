@@ -2,25 +2,25 @@
 Copyright © 2023 NAME HERE <EMAIL ADDRESS>
 
 */
-package day0
+package cmd
 
 import (
 	"github.com/spf13/cobra"
 
-	"aoc2022/day3"
+	"aoc2022/dayX"
 )
 
-// day3Cmd represents the day3 command
-var day3Cmd = &cobra.Command{
-	Use:   "day3",
+// dayXCmd represents the dayX command
+var dayXCmd = &cobra.Command{
+	Use:   "dayX",
 	Short: "Run the solution for the day one puzzle",
 	Run: func(cmd *cobra.Command, args []string) {
-		input, part := flags(cmd, 3)
-		day3.Process(input, part)
+		input, part := flags(cmd, X)
+		dayX.Process(input, part)
 
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(day3Cmd)
+	rootCmd.AddCommand(dayXCmd)
 }

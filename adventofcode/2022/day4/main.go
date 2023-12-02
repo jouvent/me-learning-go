@@ -17,7 +17,7 @@ func process(input string, part int) (res int) {
 	if part == 1 {
 		res = countContained(items)
 	} else {
-			res = countOverlaps(items)
+		res = countOverlaps(items)
 	}
 	return
 }
@@ -63,4 +63,3 @@ func overlaps(pair string) bool {
 
 	return (c <= a && a <= d) || (c <= b && b <= d) || (a <= c && c <= b) || (a <= d && d <= b)
 }
-
