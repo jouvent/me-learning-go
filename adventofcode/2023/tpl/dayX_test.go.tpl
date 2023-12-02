@@ -10,7 +10,7 @@ func ProcessTest(t *testing.T, input string, part, expect int) {
 	}
 }
 
-func Part1Test(t *testing.T, input []string, top, expect int) {
+func Part1Test(t *testing.T, input []string, expect int) {
 	res := part1(input)
 
 	if res != expect {
@@ -18,7 +18,7 @@ func Part1Test(t *testing.T, input []string, top, expect int) {
 	}
 }
 
-func Part2Test(t *testing.T, input []string, top, expect int) {
+func Part2Test(t *testing.T, input []string, expect int) {
 	res := part2(input)
 
 	if res != expect {
@@ -30,7 +30,7 @@ func TestSimple(t *testing.T) {
 	input := []string{"1", "", "1", "1"}
 	expect := 2
 
-	Part1Test(t, input, 1, expect)
+	Part1Test(t, input, expect)
 }
 
 func TestOfficialInputs1(t *testing.T) {
